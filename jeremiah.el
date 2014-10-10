@@ -242,6 +242,8 @@
 ;;; Set up for Oracle
 (let ((oracle-home (shell-command-to-string ". ~/.zshrc; echo -n $ORACLE_HOME")))
   (if oracle-home
-      (setenv "ORACLE_HOME" oracle-home)))
-
-
+      (setenv "ORACLE_HOME" oracle-home))
+  (setenv "PATH" (concat (getenv "PATH")
+                         (format "%s/%s" oracle-home "bin")))
+  (add-to-list 'exec-path (format "%s/%s" oracle-home "bin"))
+)

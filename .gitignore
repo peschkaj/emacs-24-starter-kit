@@ -54,3 +54,4 @@ secret.org
 agent/*
 
 !jeremiah.el
+%backup*
