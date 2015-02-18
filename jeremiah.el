@@ -111,6 +111,9 @@
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
+;;; electric-indent-mode
+
+
 ;;; yasnippet configuration
 ;;; documentation available at:
 ;;; http://github.com/capitaomorte/yasnippet
@@ -198,7 +201,7 @@
 ;;; ---------------------------------------------------------------------
 ;;; Autostart emacs server
 ;(server-force-delete)
-(server-start) 
+;(server-start) 
 
 
 
@@ -247,3 +250,13 @@
                          (format "%s/%s" oracle-home "bin")))
   (add-to-list 'exec-path (format "%s/%s" oracle-home "bin"))
 )
+
+
+
+;;;
+;;; set up my private customizations
+(global-unset-key (kbd "C-;"))
+(global-set-key (kbd "C-;") 'ace-window)
+
+(eval-after-load "flyspell"
+  '(define-key flyspell-mode-map (kbd "C-;") nil))
