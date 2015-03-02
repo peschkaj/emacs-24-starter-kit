@@ -255,6 +255,7 @@
 
 ;;;
 ;;; set up my private customizations
+(require 'ace-window)
 (global-unset-key (kbd "C-;"))
 (global-set-key (kbd "C-;") 'ace-window)
 
